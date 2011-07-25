@@ -3,22 +3,31 @@
 <script type="text/javascript">
 
 function save_options() {
-  var cellinputfield = document.getElementById("cell");
-  var cellnumber = cellinputfield.value;
-  localStorage["email_ad_autoresponder_cell"] = cellnumber;
+	var messageinputfield = document.getElementById("message");
+	var message = messageinputfield.value;
+	localStorage["email_ad_autoresponder_message"] = encodeURI(message);
 }
 
 function restore_options() {
-  var cellnumber = localStorage["email_ad_autoresponder_cell"];
-  var cellinputfield = document.getElementById("cell");
-  cellinputfield.value = cellnumber;
+	var message = localStorage["email_ad_autoresponder_message"];
+	if(message != undefined)
+	{
+		var messageinputfield = document.getElementById("message");
+		messageinputfield.value = decodeURI(message);
+	}
 }
 
 </script>
 
 <body onload="restore_options()">
-
-Your email: <input type="text" id="cell" value="555-555-5555">
+Your message: 
+<Br><textarea id="message" cols="80" rows="20">Hi, I'm interested in the apartment for rent. If it's still available. I'd like to come by and take a look. 
+	
+Please give me a call at: 555-555-5555. 
+	
+Thanks!
+	
+Oren</textarea>
 <br>
 The value can be whatever you want it to be. it's never parsed.
 <br>
