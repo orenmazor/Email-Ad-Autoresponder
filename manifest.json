@@ -1,0 +1,10 @@
+{
+  "name": "Email Ad Autoresponder",
+  "version": "1.0",
+  "description": "I got tired of the right-click/copy/compose/type email process that goes with apartment hunting.",
+  "permissions": [
+    "contextMenus"
+  ],
+  "background_page": "background.html",
+  "options_page": "options.html"
+}

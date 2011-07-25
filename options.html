@@ -1,0 +1,27 @@
+<html>
+<head><title>Email Ad Autoresponder</title></head>
+<script type="text/javascript">
+
+function save_options() {
+  var cellinputfield = document.getElementById("cell");
+  var cellnumber = cellinputfield.value;
+  localStorage["email_ad_autoresponder_cell"] = cellnumber;
+}
+
+function restore_options() {
+  var cellnumber = localStorage["email_ad_autoresponder_cell"];
+  var cellinputfield = document.getElementById("cell");
+  cellinputfield.value = cellnumber;
+}
+
+</script>
+
+<body onload="restore_options()">
+
+Your email: <input type="text" id="cell" value="555-555-5555">
+<br>
+The value can be whatever you want it to be. it's never parsed.
+<br>
+<button onclick="save_options()">Save</button>
+</body>
+</html>
